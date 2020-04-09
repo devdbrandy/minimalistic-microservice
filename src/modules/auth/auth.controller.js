@@ -1,7 +1,7 @@
 const JWTService = require('../../services/jwt.service');
 
 class AuthController {
-  static login(req, res, next) {
+  static login(req, res) {
     const { username, password } = req.body;
     const token = JWTService.sign({ username });
 

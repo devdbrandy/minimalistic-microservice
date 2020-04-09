@@ -7,7 +7,8 @@
     "serve": "nodemon -r ./load-config.js src/bin/www.js",
     "test": "NODE_ENV=test nyc --reporter=html --reporter=text mocha",
     "test:watch": "npm t -- -w",
-    "coverage": "nyc report --reporter=text-lcov | coveralls"
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
+    "lint": "eslint src"
   },
   "dependencies": {
     "chai": "^4.2.0",
@@ -30,6 +31,9 @@
   },
   "devDependencies": {
     "coveralls": "^3.0.11",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-plugin-import": "^2.20.2",
     "nodemon": "^2.0.3",
     "nyc": "^15.0.1"
   }

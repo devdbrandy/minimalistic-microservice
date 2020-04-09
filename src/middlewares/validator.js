@@ -39,7 +39,7 @@ class Validator {
       return res.status(400).json({ errors: errors.array() });
     }
 
-    next();
+    return next();
   }
 }
 

@@ -45,7 +45,7 @@ exports.getDateFormat = () => {
 };
 
 exports.getFullUrl = filepath => {
-  const baseURI = process.env['APP_URL'];
+  const baseURI = process.env.APP_URL;
   const fileUrl = filepath.split('/');
 
   fileUrl.shift();
