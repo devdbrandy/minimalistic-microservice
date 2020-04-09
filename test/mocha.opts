@@ -1,0 +1,2 @@
+--timeout=3000 test/**/*.test.js src/**/*.test.js
+--exit
