@@ -12,20 +12,19 @@ A simple minimalistic stateless microservice built with Node.js and Express.js, 
 
 <!-- TOC depthFrom:2 -->
 
-- [Minimalistic Stateless Microservice](#minimalistic-stateless-microservice)
-  - [Overview](#overview)
-  - [1. :rocket: Getting Started](#1-rocket-getting-started)
-    - [1.1 Prerequisites](#11-prerequisites)
-    - [1.2. Run locally](#12-run-locally)
-    - [1.3. Test Locally](#13-test-locally)
-    - [1.4. Running Test](#14-running-test)
-  - [2. :lock: Authentication](#2-lock-authentication)
-  - [3. :bookmark: API Versioning](#3-bookmark-api-versioning)
-  - [3. :green_heart: HTTP Response Codes](#3-greenheart-http-response-codes)
-  - [:bookmark: 6. Resources](#bookmark-6-resources)
-    - [6.1. Authentication](#61-authentication)
-    - [6.2. API Routes](#62-api-routes)
-  - [4. :pencil: License](#4-pencil-license)
+- [Overview](#overview)
+- [1. :rocket: Getting Started](#1-rocket-getting-started)
+  - [1.1 Prerequisites](#11-prerequisites)
+  - [1.2. Run locally](#12-run-locally)
+  - [1.3. Test Locally](#13-test-locally)
+  - [1.4. Running Test](#14-running-test)
+- [2. :lock: Authentication](#2-lock-authentication)
+- [3. :bookmark: API Versioning](#3-bookmark-api-versioning)
+- [3. :green_heart: HTTP Response Codes](#3-green_heart-http-response-codes)
+- [4. :bookmark: Resources](#4-bookmark-resources)
+  - [4.1. Authentication](#41-authentication)
+  - [4.2. API Routes](#42-api-routes)
+- [5. :pencil: License](#5-pencil-license)
 
 <!-- /TOC -->
 
@@ -52,11 +51,11 @@ To get started, ensure that you have [NodeJS](https://nodejs.org/en/download/) i
 
 ### 1.3. Test Locally
 
-To test or consume api locally, you can make use of [*Postman*](https://www.getpostman.com) or [*Insomnia*](https://insomnia.rest/download/)
+To test or consume api locally, you can make use of [_Postman_](https://www.getpostman.com) or [_Insomnia_](https://insomnia.rest/download/)
 
 ### 1.4. Running Test
 
-Test specs are implemented using [*mocha*](https://mochajs.org) + [*chai*](https://chiajs.com) + [*sinon*](https://sinonjs.org).
+Test specs are implemented using [_mocha_](https://mochajs.org) + [_chai_](https://chiajs.com) + [_sinon_](https://sinonjs.org).
 
 Two npm scripts are available to run the test suite:
 
@@ -102,21 +101,21 @@ Each response will be returned with one of the following HTTP status codes:
 - `404` `Not Found` An attempt was made to access a resource that does not exist in the API
 - `500` `Server Error` An error on the server occurred
 
-## :bookmark: 6. Resources
+## 4. :bookmark: Resources
 
-### 6.1. Authentication
+### 4.1. Authentication
 
-  | URI                                            | HTTP Method | Description   |
-  | ---------------------------------------------- | :---------: | ------------- |
-  | [<code>**/login**</code>](/docs/POST_login.md) |   `POST`    | Account login |
+| URI                                            | HTTP Method | Description   |
+| ---------------------------------------------- | :---------: | ------------- |
+| [<code>**/login**</code>](/docs/POST_login.md) |   `POST`    | Account login |
 
-### 6.2. API Routes
+### 4.2. API Routes
 
-  | URI                                                           | HTTP Method | Description              |
-  | ------------------------------------------------------------- | :---------: | ------------------------ |
-  | [<code>**/api/v1/thumbnail**</code>](/docs/POST_thumbnail.md) |   `POST`    | Generate image thumbnail |
-  | [<code>**/api/v1/jsonpatch**</code>](/docs/POST_jsonpatch.md) |   `POST`    | Generate json patch      |
+| URI                                                           | HTTP Method | Description              |
+| ------------------------------------------------------------- | :---------: | ------------------------ |
+| [<code>**/api/v1/thumbnail**</code>](/docs/POST_thumbnail.md) |   `POST`    | Generate image thumbnail |
+| [<code>**/api/v1/jsonpatch**</code>](/docs/POST_jsonpatch.md) |   `POST`    | Generate json patch      |
 
-## 4. :pencil: License
+## 5. :pencil: License
 
 This project is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
