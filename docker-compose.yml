@@ -1,0 +1,8 @@
+version: "3"
+services:
+  api:
+    image: dbrandy/simple-microservice
+    build: .
+    command: npm start
+    ports:
+      - "3000:3000"
