@@ -1,2 +1,3 @@
 --timeout=3000 test/**/*.test.js src/**/*.test.js
+--require load-config
 --exit

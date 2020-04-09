@@ -1,10 +1,10 @@
 const { expect } = require('chai');
 const request = require('supertest');
 const sinon = require('sinon');
+const Jimp = require('jimp');
+
 const app = require('../src/app');
 const JWTService = require('../src/services/jwt.service');
-const ThumbnailService = require('../src/services/thumbnail.service');
-const Jimp = require('jimp');
 
 let authToken;
 before(() => {
