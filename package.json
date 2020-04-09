@@ -5,8 +5,9 @@
   "scripts": {
     "start": "node ./src/bin/www.js",
     "serve": "nodemon -r ./load-config.js src/bin/www.js",
-    "test": "nyc --reporter=html mocha --timeout=3000 test/**/*.test.js src/**/*.test.js",
-    "test:watch": "npm t -- -w"
+    "test": "nyc --reporter=html --reporter=text mocha --timeout=3000 test/**/*.test.js src/**/*.test.js",
+    "test:watch": "npm t -- -w",
+    "coverage": "nyc report --reporter=text-lcov | coveralls"
   },
   "dependencies": {
     "chai": "^4.2.0",
