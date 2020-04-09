@@ -1,48 +1,25 @@
-const createError = require('http-errors');
-const Jimp = require('jimp');
-const jsonpatch = require('fast-json-patch');
-const { getDateFormat } = require('../../helpers/utils');
+const ThumbnailService = require('../../services/thumbnail-service');
+const JsonPatchService = require('../../services/jsonpatch-service');
 
 class FeaturesController {
   static async createThumbnail(req, res, next) {
-    const allowedImages = ['gif', 'jpg', 'png'];
     const { imageUrl } = req.body;
-    const fileExt = imageUrl.split('.').pop(); // extract file extension
-
-    if (!allowedImages.includes(fileExt)) {
-      return next(
-        createError(
-          400,
-          'Oop, something is not right. Please check your image url and try again.'
-        )
-      );
-    }
-
-    const storageDir = 'public/thumbnails';
 
     try {
-      const image = await Jimp.read(imageUrl);
-      const filename = `${storageDir}/thumb-${getDateFormat()}.${image.getExtension()}`;
+      const imageLink = await ThumbnailService.generateThumbnail(imageUrl);
 
-      image.resize(50, 50).write(filename);
-      return res.json({ task: 'Thumbnail successfully created.' });
+      return res.json({
+        message: 'Thumbnail successfully created.',
+        link: imageLink
+      });
     } catch (error) {
-      return next(
-        createError(
-          500,
-          'Oop, something went wrong while processing image. Please try again later.'
-        )
-      );
+      return next(error);
     }
   }
 
   static jsonPatch(req, res, next) {
     const { document, patch } = req.body;
-
-    const jsonDocument = JSON.parse(document);
-    const documentPatch = JSON.parse(patch);
-    const result = jsonpatch.applyPatch(jsonDocument, documentPatch)
-      .newDocument;
+    const result = JsonPatchService.patch(document, patch);
     return res.json(result);
   }
 }
