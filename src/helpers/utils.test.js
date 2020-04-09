@@ -37,7 +37,7 @@ describe('getDateFormat', () => {
     MockDate.set('2020-4-9');
   });
 
-  afterEach(function() {
+  afterEach(() => {
     MockDate.reset();
   });
 
