@@ -5,9 +5,9 @@ const Debug = require('debug');
 const { createServer } = require('http');
 const { env, normalizePort } = require('../helpers/utils');
 const app = require('../app');
+const logger = require('../helpers/logger');
 
 const debug = Debug('authorspad:api');
-const logger = console;
 
 /**
  * Get port from environment and store in Express.
@@ -54,7 +54,7 @@ const onListening = () => {
   const bind =
     typeof address === 'string' ? `pipe ${address}` : `port: ${address.port}`;
 
-  logger.log('🚀', `We are live on ${bind}`);
+  logger.info(`🚀 We are live on ${bind}`);
 };
 
 /**

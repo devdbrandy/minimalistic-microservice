@@ -1,14 +1,14 @@
 const createError = require('http-errors');
 const express = require('express');
 const cookieParser = require('cookie-parser');
-const logger = require('morgan');
 const path = require('path');
+const httpLogger = require('./middlewares/http-logger');
 
 const routeModules = require('./modules');
 
 const app = express();
 
-app.use(logger('dev'));
+app.use(httpLogger);
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
