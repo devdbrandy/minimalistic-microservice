@@ -12,7 +12,7 @@ const routes = app => {
   const apiPrefix = '/api/v1';
 
   app.use(homeRouter);
-  app.use(apiPrefix, authRouter);
+  app.use(authRouter);
   app.use(apiPrefix, featuresRouter);
 
   return app;

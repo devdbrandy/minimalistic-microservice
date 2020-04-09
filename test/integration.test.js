@@ -27,10 +27,10 @@ describe('home', () => {
   });
 });
 
-describe('POST /register', () => {
+describe('POST /login', () => {
   it('should successfully auhthenticate user and respond with token', done => {
     request(app)
-      .post('/api/v1/login')
+      .post('/login')
       .send({ username: 'john', password: 'secret' })
       .set('Accept', 'application/json')
       .expect('Content-Type', /json/)
@@ -45,7 +45,7 @@ describe('POST /register', () => {
 
   it('should respond with 400 status for invalid request payload', done => {
     request(app)
-      .post('/api/v1/login')
+      .post('/login')
       .send({ username: '', password: '' })
       .set('Accept', 'application/json')
       .expect('Content-Type', /json/)
