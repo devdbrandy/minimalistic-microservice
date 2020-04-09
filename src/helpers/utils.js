@@ -1,7 +1,7 @@
 /**
  * A simple wrapper for console
  */
-const logger = console;
+exports.logger = console;
 
 /**
  * Gets the value of an environment variable.
@@ -11,7 +11,7 @@ const logger = console;
  * variable exists for the given key
  * @returns {string|number|boolean} The environment variable value
  */
-const env = (key, defaultValue = null) => {
+exports.env = (key, defaultValue = null) => {
   const value = process.env[key];
   const bools = ['true', 'false'];
 
@@ -26,14 +26,24 @@ const env = (key, defaultValue = null) => {
  * @param {number|string|boolean} value - The port value
  * @returns {number|boolean} - Normalized port value or false
  */
-const normalizePort = value => {
+exports.normalizePort = value => {
   const port = parseInt(value, 10);
   if (Number.isNaN(port)) return port;
   return port >= 0 ? port : false;
 };
 
-module.exports = {
-  logger,
-  env,
-  normalizePort
+exports.getDateFormat = () => {
+  const date = new Date();
+  const padNum = num => ('0' + num).slice(-2);
+
+  const format = [
+    date.getFullYear(),
+    padNum(date.getMonth() + 1),
+    padNum(date.getDate()),
+    date.getHours(),
+    date.getMinutes(),
+    date.getSeconds()
+  ].join('');
+
+  return format;
 };
