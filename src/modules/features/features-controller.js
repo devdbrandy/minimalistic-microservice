@@ -1,5 +1,6 @@
 const createError = require('http-errors');
 const Jimp = require('jimp');
+const jsonpatch = require('fast-json-patch');
 const { getDateFormat } = require('../../helpers/utils');
 
 class FeaturesController {
@@ -33,6 +34,16 @@ class FeaturesController {
         )
       );
     }
+  }
+
+  static jsonPatch(req, res, next) {
+    const { document, patch } = req.body;
+
+    const jsonDocument = JSON.parse(document);
+    const documentPatch = JSON.parse(patch);
+    const result = jsonpatch.applyPatch(jsonDocument, documentPatch)
+      .newDocument;
+    return res.json(result);
   }
 }
 
