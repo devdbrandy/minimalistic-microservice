@@ -1,9 +1,8 @@
 const { Router } = require('express');
 const router = Router();
+const controller = require('./auth-controller');
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
-});
+/* POST authenticate user. */
+router.post('/login', controller.login);
 
 module.exports = router;
