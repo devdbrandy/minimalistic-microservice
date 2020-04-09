@@ -1,5 +1,5 @@
-const ThumbnailService = require('../../services/thumbnail-service');
-const JsonPatchService = require('../../services/jsonpatch-service');
+const ThumbnailService = require('../../services/thumbnail.service');
+const JsonPatchService = require('../../services/jsonpatch.service');
 
 class FeaturesController {
   static async createThumbnail(req, res, next) {

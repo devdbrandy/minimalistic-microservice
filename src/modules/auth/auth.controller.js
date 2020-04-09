@@ -1,4 +1,4 @@
-const JWTService = require('../../services/jwt-service');
+const JWTService = require('../../services/jwt.service');
 
 class AuthController {
   static login(req, res, next) {

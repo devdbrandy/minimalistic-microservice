@@ -1,6 +1,6 @@
 const { Router } = require('express');
 const router = Router();
-const controller = require('./features-controller');
+const controller = require('./features.controller');
 const { verifyToken } = require('../../middlewares/authenticate');
 
 /* POST generate thumbnail */

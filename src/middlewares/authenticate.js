@@ -1,5 +1,5 @@
 const createError = require('http-errors');
-const JWTService = require('../services/jwt-service');
+const JWTService = require('../services/jwt.service');
 
 class AuthGuard {
   /**
