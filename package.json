@@ -11,6 +11,7 @@
     "debug": "~2.6.9",
     "dotenv-extended": "^2.8.0",
     "express": "~4.16.1",
+    "express-validator": "^6.4.0",
     "fast-json-patch": "^3.0.0-1",
     "http-errors": "~1.6.3",
     "jade": "~1.11.0",

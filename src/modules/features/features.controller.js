@@ -17,9 +17,10 @@ class FeaturesController {
     }
   }
 
-  static jsonPatch(req, res, next) {
+  static jsonPatch(req, res) {
     const { document, patch } = req.body;
-    const result = JsonPatchService.patch(document, patch);
+    const result = JsonPatchService.applyPatch(document, patch);
+
     return res.json(result);
   }
 }
