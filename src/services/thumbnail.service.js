@@ -4,7 +4,7 @@ const { getDateFormat, getFullUrl } = require('../helpers/utils');
 
 class ThumbnailService {
   static async generateThumbnail(imageUrl) {
-    const allowedImages = ['gif', 'jpg', 'png', 'svg', 'tif'];
+    const allowedImages = ['gif', 'jpg', 'jpeg', 'png', 'svg', 'tif'];
     const fileExt = imageUrl.split('.').pop(); // extract file extension
 
     if (!allowedImages.includes(fileExt)) {

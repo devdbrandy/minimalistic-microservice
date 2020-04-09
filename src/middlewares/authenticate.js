@@ -15,18 +15,22 @@ class AuthGuard {
     const authHeader = req.header('Authorization');
 
     try {
-      if (!authHeader)
-        throw createError(403, 'Authentication token is required');
-
-      if (!authHeader.startsWith('Bearer')) {
+      if (!authHeader || !authHeader.startsWith('Bearer')) {
         throw createError(
           401,
-          'Oops, authentication failed or token has expired.'
+          'Oops, authentication failed. A token is required.'
         );
       }
 
       const token = authHeader.split(' ').pop();
       const decoded = JWTService.verify(token);
+
+      if (!decoded) {
+        throw createError(
+          401,
+          'Oops, authentication failed or your token has expired.'
+        );
+      }
 
       req.user = decoded;
       next();

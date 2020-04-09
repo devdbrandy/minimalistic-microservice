@@ -1,9 +1,4 @@
 /**
- * A simple wrapper for console
- */
-exports.logger = console;
-
-/**
  * Gets the value of an environment variable.
  *
  * @param {string} key - Environment variable key
@@ -15,7 +10,8 @@ exports.env = (key, defaultValue = null) => {
   const value = process.env[key];
   const bools = ['true', 'false'];
 
-  if (bools.includes(value)) return !!value;
+  if (value === 'true') return true;
+  if (value === 'false') return false;
   if (value === '(empty)') return '';
   return value || defaultValue;
 };

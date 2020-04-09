@@ -18,7 +18,7 @@ class JWTService {
    * @memberof JWTService
    */
   static sign(payload) {
-    const privateKey = env('APP_PKEY');
+    const privateKey = env('APP_PKEY', 'secret');
     const options = {
       issuer: env('APP_NAME', ''),
       audience: env('APP_URL', ''),
@@ -37,7 +37,7 @@ class JWTService {
    * @memberof JWTService
    */
   static verify(token) {
-    const publicKEY = env('APP_PKEY');
+    const privateKey = env('APP_PKEY', 'secret');
     const options = {
       issuer: env('APP_NAME', ''),
       audience: env('APP_URL', ''),
@@ -45,7 +45,7 @@ class JWTService {
     };
 
     try {
-      return jwt.verify(token, publicKEY, options);
+      return jwt.verify(token, privateKey, options);
     } catch (err) {
       return false;
     }

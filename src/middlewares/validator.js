@@ -14,7 +14,12 @@ class Validator {
         ).isLength(5)
       ],
       thumbnail: [
-        body('imageUrl', "'imageUrl' is required and must be a url").isURL()
+        body(
+          'imageUrl',
+          "'imageUrl' is required and must be a valid url"
+        ).isURL({
+          require_protocol: true
+        })
       ],
       jsonpatch: [
         body('document', "'document' must be a json object").isJSON(),

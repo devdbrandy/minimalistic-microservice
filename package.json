@@ -4,9 +4,12 @@
   "private": true,
   "scripts": {
     "start": "node ./src/bin/www.js",
-    "serve": "nodemon -r ./load-config.js src/bin/www.js"
+    "serve": "nodemon -r ./load-config.js src/bin/www.js",
+    "test": "nyc --reporter=html mocha --timeout=3000 test/**/*.test.js src/**/*.test.js",
+    "test:watch": "npm t -- -w"
   },
   "dependencies": {
+    "chai": "^4.2.0",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "dotenv-extended": "^2.8.0",
@@ -17,9 +20,15 @@
     "jade": "~1.11.0",
     "jimp": "^0.10.1",
     "jsonwebtoken": "^8.5.1",
-    "morgan": "~1.9.1"
+    "mocha": "^7.1.1",
+    "mockdate": "^2.0.5",
+    "morgan": "~1.9.1",
+    "sinon": "^9.0.2",
+    "supertest": "^4.0.2"
   },
   "devDependencies": {
-    "nodemon": "^2.0.3"
+    "coveralls": "^3.0.11",
+    "nodemon": "^2.0.3",
+    "nyc": "^15.0.1"
   }
 }

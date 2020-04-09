@@ -3,10 +3,11 @@
  */
 const Debug = require('debug');
 const { createServer } = require('http');
-const { env, logger, normalizePort } = require('../helpers/utils');
+const { env, normalizePort } = require('../helpers/utils');
 const app = require('../app');
 
 const debug = Debug('authorspad:api');
+const logger = console;
 
 /**
  * Get port from environment and store in Express.
