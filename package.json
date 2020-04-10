@@ -7,6 +7,7 @@
     "clean": "rimraf dist",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
     "lint": "eslint src",
+    "prestart": "npm run build",
     "serve": "nodemon -r ./load-config.js --exec babel-node src/bin/www.js",
     "start": "node ./dist/bin/www.js",
     "test": "NODE_ENV=test nyc --reporter=html --reporter=text mocha",
