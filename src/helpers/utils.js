@@ -6,7 +6,7 @@
  * variable exists for the given key
  * @returns {string|number|boolean} The environment variable value
  */
-exports.env = (key, defaultValue = null) => {
+export const env = (key, defaultValue = null) => {
   const value = process.env[key];
   const bools = ['true', 'false'];
 
@@ -22,13 +22,13 @@ exports.env = (key, defaultValue = null) => {
  * @param {number|string|boolean} value - The port value
  * @returns {number|boolean} - Normalized port value or false
  */
-exports.normalizePort = value => {
+export const normalizePort = value => {
   const port = parseInt(value, 10);
   if (Number.isNaN(port)) return port;
   return port >= 0 ? port : false;
 };
 
-exports.getDateFormat = () => {
+export const getDateFormat = () => {
   const date = new Date();
   const padNum = num => ('0' + num).slice(-2);
 
@@ -44,8 +44,8 @@ exports.getDateFormat = () => {
   return format;
 };
 
-exports.getFullUrl = filepath => {
-  const baseURI = process.env.APP_URL;
+export const getFullUrl = filepath => {
+  const baseURI = env('APP_URL', '');
   const fileUrl = filepath.split('/');
 
   fileUrl.shift();

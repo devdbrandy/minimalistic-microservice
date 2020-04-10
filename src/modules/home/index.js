@@ -1,4 +1,4 @@
-const { Router } = require('express');
+import { Router } from 'express';
 
 const router = Router();
 
@@ -7,4 +7,4 @@ router.get('/', (req, res) => {
   res.json({ message: 'Welcome to Node.js Microservice' });
 });
 
-module.exports = router;
+export default router;

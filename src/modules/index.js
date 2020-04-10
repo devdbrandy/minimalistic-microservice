@@ -1,6 +1,6 @@
-const homeRouter = require('./home');
-const authRouter = require('./auth');
-const featuresRouter = require('./features');
+import homeRouter from './home';
+import authRouter from './auth';
+import featuresRouter from './features';
 
 /**
  * Routes register
@@ -18,4 +18,4 @@ const routes = app => {
   return app;
 };
 
-module.exports = routes;
+export default routes;

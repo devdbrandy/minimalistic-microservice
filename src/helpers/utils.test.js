@@ -1,6 +1,6 @@
-const { expect } = require('chai');
-const MockDate = require('mockdate');
-const { env, normalizePort, getDateFormat, getFullUrl } = require('./utils');
+import { expect } from 'chai';
+import MockDate from 'mockdate';
+import { env, normalizePort, getDateFormat, getFullUrl } from './utils';
 
 describe('env', () => {
   it('should return a default value for non-existing config', () => {
@@ -47,10 +47,6 @@ describe('getDateFormat', () => {
 });
 
 describe('getFullUrl', () => {
-  beforeEach(() => {
-    process.env.APP_URL = '';
-  });
-
   it('should return the current formatted date', () => {
     expect(getFullUrl('public/image.jpg')).equal('/image.jpg');
   });

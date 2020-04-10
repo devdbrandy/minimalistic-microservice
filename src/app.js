@@ -1,10 +1,10 @@
-const createError = require('http-errors');
-const express = require('express');
-const cookieParser = require('cookie-parser');
-const path = require('path');
-const httpLogger = require('./middlewares/http-logger');
+import createError from 'http-errors';
+import express from 'express';
+import cookieParser from 'cookie-parser';
+import path from 'path';
+import httpLogger from './middlewares/http-logger';
 
-const routeModules = require('./modules');
+import routeModules from './modules';
 
 const app = express();
 
@@ -29,4 +29,4 @@ app.use((err, req, res, next) => {
   res.json({ error: err.message });
 });
 
-module.exports = app;
+export default app;

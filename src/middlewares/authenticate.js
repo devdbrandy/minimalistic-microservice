@@ -1,7 +1,7 @@
-const createError = require('http-errors');
-const JWTService = require('../services/jwt.service');
+import createError from 'http-errors';
+import JWTService from '../services/jwt.service';
 
-class AuthGuard {
+export default class AuthGuard {
   /**
    * A middleware to determine if the request is made by an authenticated user
    *
@@ -39,5 +39,3 @@ class AuthGuard {
     }
   }
 }
-
-module.exports = AuthGuard;

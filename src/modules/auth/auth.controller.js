@@ -1,4 +1,4 @@
-const JWTService = require('../../services/jwt.service');
+import JWTService from '../../services/jwt.service';
 
 class AuthController {
   static login(req, res) {
@@ -9,4 +9,4 @@ class AuthController {
   }
 }
 
-module.exports = AuthController;
+export default AuthController;

@@ -1,6 +1,6 @@
-const { body, validationResult } = require('express-validator');
+import { body, validationResult } from 'express-validator';
 
-class Validator {
+export default class Validator {
   static get routes() {
     return {
       login: [
@@ -42,5 +42,3 @@ class Validator {
     return next();
   }
 }
-
-module.exports = Validator;

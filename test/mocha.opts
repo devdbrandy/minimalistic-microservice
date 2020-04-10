@@ -1,3 +1,5 @@
+-r babel-polyfill
+-r @babel/register
 --timeout=3000 test/**/*.test.js src/**/*.test.js
---require load-config
+-r load-config
 --exit

@@ -1,5 +1,5 @@
-const ThumbnailService = require('../../services/thumbnail.service');
-const JsonPatchService = require('../../services/jsonpatch.service');
+import ThumbnailService from '../../services/thumbnail.service';
+import JsonPatchService from '../../services/jsonpatch.service';
 
 class FeaturesController {
   static async createThumbnail(req, res, next) {
@@ -25,4 +25,4 @@ class FeaturesController {
   }
 }
 
-module.exports = FeaturesController;
+export default FeaturesController;

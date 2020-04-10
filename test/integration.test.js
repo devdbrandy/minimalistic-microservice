@@ -1,10 +1,10 @@
-const { expect } = require('chai');
-const request = require('supertest');
-const sinon = require('sinon');
-const Jimp = require('jimp');
+import { expect } from 'chai';
+import request from 'supertest';
+import sinon from 'sinon';
+import Jimp from 'jimp';
 
-const app = require('../src/app');
-const JWTService = require('../src/services/jwt.service');
+import app from '../src/app';
+import JWTService from '../src/services/jwt.service';
 
 let authToken;
 before(() => {
@@ -83,7 +83,7 @@ describe('POST /thumbnail', () => {
 
         expect(res.body).to.have.own.property('message');
         expect(res.body).to.have.own.property('link');
-        done();
+        return done();
       });
 
     stub.restore();

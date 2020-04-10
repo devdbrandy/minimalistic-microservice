@@ -1,15 +1,15 @@
-const { Router } = require('express');
+import { Router } from 'express';
+import Controller from './features.controller';
+import AuthGuard from '../../middlewares/authenticate';
+import Validator from '../../middlewares/validator';
 
 const router = Router();
-const Controller = require('./features.controller');
-const { verifyToken } = require('../../middlewares/authenticate');
-const Validator = require('../../middlewares/validator');
 
 /* POST generate thumbnail */
 router.post(
   '/thumbnail',
   Validator.validate('thumbnail'),
-  verifyToken,
+  AuthGuard.verifyToken,
   Controller.createThumbnail
 );
 
@@ -17,8 +17,8 @@ router.post(
 router.post(
   '/jsonpatch',
   Validator.validate('jsonpatch'),
-  verifyToken,
+  AuthGuard.verifyToken,
   Controller.jsonPatch
 );
 
-module.exports = router;
+export default router;

@@ -1,11 +1,11 @@
 /**
  * Module dependencies.
  */
-const Debug = require('debug');
-const { createServer } = require('http');
-const { env, normalizePort } = require('../helpers/utils');
-const app = require('../app');
-const logger = require('../helpers/logger');
+import Debug from 'debug';
+import { createServer } from 'http';
+import { env, normalizePort } from '../helpers/utils';
+import app from '../app';
+import logger from '../helpers/logger';
 
 const debug = Debug('authorspad:api');
 
