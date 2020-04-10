@@ -3,8 +3,8 @@ import request from 'supertest';
 import sinon from 'sinon';
 import Jimp from 'jimp';
 
-import app from '../src/app';
-import JWTService from '../src/services/jwt.service';
+import app from '@src/app';
+import JWTService from '@services/jwt.service';
 
 let authToken;
 before(() => {

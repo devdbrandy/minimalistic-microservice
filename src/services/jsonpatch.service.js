@@ -1,4 +1,4 @@
-const jsonpatch = require('fast-json-patch');
+import jsonpatch from 'fast-json-patch';
 
 class JsonPatchService {
   static applyPatch(document, patch) {
@@ -9,4 +9,4 @@ class JsonPatchService {
   }
 }
 
-module.exports = JsonPatchService;
+export default JsonPatchService;

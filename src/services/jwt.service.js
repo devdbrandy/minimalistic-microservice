@@ -1,5 +1,5 @@
-const jwt = require('jsonwebtoken');
-const { env } = require('../helpers/utils');
+import jwt from 'jsonwebtoken';
+import { env } from '@helpers/utils';
 
 /**
  * JWT Service Module
@@ -52,4 +52,4 @@ class JWTService {
   }
 }
 
-module.exports = JWTService;
+export default JWTService;

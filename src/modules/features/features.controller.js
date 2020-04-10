@@ -1,5 +1,5 @@
-import ThumbnailService from '../../services/thumbnail.service';
-import JsonPatchService from '../../services/jsonpatch.service';
+import ThumbnailService from '@services/thumbnail.service';
+import JsonPatchService from '@services/jsonpatch.service';
 
 class FeaturesController {
   static async createThumbnail(req, res, next) {

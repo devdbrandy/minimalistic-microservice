@@ -1,13 +1,11 @@
 /**
  * Module dependencies.
  */
-import Debug from 'debug';
 import { createServer } from 'http';
-import { env, normalizePort } from '../helpers/utils';
-import app from '../app';
-import logger from '../helpers/logger';
 
-const debug = Debug('authorspad:api');
+import { env, normalizePort } from '@helpers/utils';
+import app from '@src/app';
+import logger from '@helpers/logger';
 
 /**
  * Get port from environment and store in Express.

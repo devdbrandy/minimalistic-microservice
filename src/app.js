@@ -2,7 +2,7 @@ import createError from 'http-errors';
 import express from 'express';
 import cookieParser from 'cookie-parser';
 import path from 'path';
-import httpLogger from './middlewares/http-logger';
+import httpLogger from '@middlewares/http-logger';
 
 import routeModules from './modules';
 

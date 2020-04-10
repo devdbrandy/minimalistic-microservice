@@ -1,6 +1,6 @@
-const createError = require('http-errors');
-const Jimp = require('jimp');
-const { getDateFormat, getFullUrl } = require('../helpers/utils');
+import createError from 'http-errors';
+import Jimp from 'jimp';
+import { getDateFormat, getFullUrl } from '@helpers/utils';
 
 class ThumbnailService {
   static async generateThumbnail(imageUrl) {
@@ -23,4 +23,4 @@ class ThumbnailService {
   }
 }
 
-module.exports = ThumbnailService;
+export default ThumbnailService;

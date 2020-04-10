@@ -1,6 +1,6 @@
-const { resolve } = require('path');
-const { load } = require('dotenv-extended');
-const { env } = require('./src/helpers/utils');
+import { resolve } from 'path';
+import { load } from 'dotenv-extended';
+import { env } from '@helpers/utils';
 
 const isTestEnvironment = env('NODE_ENV') === 'test';
 const dotenvFile = isTestEnvironment ? '.env.test' : '.env';

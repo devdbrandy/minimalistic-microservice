@@ -1,4 +1,4 @@
-import JWTService from '../../services/jwt.service';
+import JWTService from '@services/jwt.service';
 
 class AuthController {
   static login(req, res) {
