@@ -3,12 +3,14 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./src/bin/www.js",
-    "serve": "nodemon -r ./load-config.js src/bin/www.js",
-    "test": "NODE_ENV=test nyc --reporter=html --reporter=text mocha",
-    "test:watch": "npm t -- -w",
+    "build": "npm run clean && babel src -d dist",
+    "clean": "rimraf dist",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
-    "lint": "eslint src"
+    "lint": "eslint src",
+    "serve": "nodemon -r ./load-config.js --exec babel-node src/bin/www.js",
+    "start": "node ./dist/bin/www.js",
+    "test": "NODE_ENV=test nyc --reporter=html --reporter=text mocha",
+    "test:watch": "mocha -w"
   },
   "dependencies": {
     "chai": "^4.2.0",
@@ -30,11 +32,16 @@
     "winston": "^3.2.1"
   },
   "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.0",
+    "@babel/node": "^7.8.7",
+    "@babel/preset-env": "^7.9.5",
     "coveralls": "^3.0.11",
     "eslint": "^6.8.0",
     "eslint-config-airbnb-base": "^14.1.0",
     "eslint-plugin-import": "^2.20.2",
     "nodemon": "^2.0.3",
-    "nyc": "^15.0.1"
+    "nyc": "^15.0.1",
+    "rimraf": "^3.0.2"
   }
 }
