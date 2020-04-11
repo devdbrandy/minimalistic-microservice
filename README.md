@@ -1,6 +1,7 @@
 # Minimalistic Stateless Microservice
 
 [![Coverage Status](https://coveralls.io/repos/github/devdbrandy/minimalistic-microservice/badge.svg?branch=master)](https://coveralls.io/github/devdbrandy/minimalistic-microservice?branch=master)
+![Docker Image CI](https://github.com/devdbrandy/minimalistic-microservice/workflows/Docker%20Image%20CI/badge.svg?branch=master)
 
 ## Overview
 
