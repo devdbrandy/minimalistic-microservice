@@ -60,7 +60,7 @@ Test specs are implemented using [_mocha_](https://mochajs.org) + [_chai_](https
 Two npm scripts are available to run the test suite:
 
 1. `npm t` or `npm test` - Performs a single full test suite run, including instanbul code coverage reporting. Summary coverage reports are written to stdout, and detailed HTML reports are available in `/coverage/index.html`
-2. `npm run test:watch` - The later watches for any file changes and runs the full test suite.
+2. `npm run test:watch` - This watches for any file changes and runs the full test suite.
 
 ## 2. :lock: Authentication
 
